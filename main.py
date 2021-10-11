@@ -1,17 +1,11 @@
 # -*- coding: utf-8 -*-
-import jieba
-import jieba.posseg as pseg
-import os
-import sys
-from sklearn import feature_extraction
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
- 
 if __name__ == "__main__":
     corpus=[
-        "water of bethroom is cold.",
-		"room is small and waterless.",
-		"room is small and dark.",
+    "The hotel was clean and quiet. The check-in process went smoothly. The only negative is that the shuttle times were not accurate, which had quite a few guests scrambling.",
+	"Bare necessities hotel. Clean quiet, nice breakfast and  very helpful staff. All for a competitive budget price",
+	"Staff was very nice. Airport shuttle was good. Bed was adequate. Room simple.",
         ]
     vectorizer=CountVectorizer()#该类会将文本中的词语转换为词频矩阵，矩阵元素a[i][j] 表示j词在i类文本下的词频
     transformer=TfidfTransformer()#该类会统计每个词语的tf-idf权值
